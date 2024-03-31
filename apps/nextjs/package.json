@@ -1,0 +1,50 @@
+{
+  "name": "@theproject/nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm with-env next build",
+    "clean": "git clean -xdf .next .turbo node_modules",
+    "dev": "pnpm with-env next dev",
+    "lint": "next lint",
+    "format": "prettier --check \"**/*.{js,cjs,mjs,ts,tsx,md,json}\"",
+    "start": "pnpm with-env next start",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env.local --"
+  },
+  "dependencies": {
+    "@theproject/ui": "^0.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "14.1.3",
+    "@next/mdx": "^14.1.0",
+    "@t3-oss/env-nextjs": "^0.7.3",
+    "zod": "^3.22.4",
+    "next-themes": "^0.3.0",
+    "react-wrap-balancer": "^1.1.0",
+    "@clerk/nextjs": "^4.29.9"
+  },
+  "devDependencies": {
+    "@theproject/eslint-config": "^0.2.0",
+    "@theproject/prettier-config": "^0.1.0",
+    "@theproject/tailwind-config": "^0.1.0",
+    "@theproject/tsconfig": "^0.1.0",
+    "typescript": "^5.4.2",
+    "@types/node": "^20.11.29",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.36",
+    "tailwindcss": "^3.4.1",
+    "dotenv-cli": "^7.4.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@theproject/eslint-config/base",
+      "@theproject/eslint-config/nextjs",
+      "@theproject/eslint-config/react"
+    ]
+  },
+  "prettier": "@theproject/prettier-config"
+}

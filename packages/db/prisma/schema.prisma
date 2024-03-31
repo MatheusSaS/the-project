@@ -1,0 +1,31 @@
+generator kysely {
+  provider     = "prisma-kysely"
+  output       = "."
+  enumFileName = "enums.ts"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+enum SubscriptionPlan {
+  FREE
+  STANDARD
+  PRO
+}
+
+model Customer {
+  id                  String            @id @db.VarChar(30) // prefix_ + nanoid (16)
+  stripeId            String            @unique
+  subscriptionId      String?
+  clerkUserId         String
+  clerkOrganizationId String?
+  name                String?
+  plan                SubscriptionPlan?
+  paidUntil           DateTime?
+  endsAt              DateTime?
+
+  @@index([clerkUserId])
+}

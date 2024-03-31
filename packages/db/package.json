@@ -1,0 +1,45 @@
+{
+  "name": "@theproject/db",
+  "private": true,
+  "version": "0.1.0",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "db:generate": "pnpm with-env prisma generate",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
+    "studio": "pnpm with-env prisma studio --port 5556",
+    "format": "prisma format && prettier --check \"**/*.{mjs,ts,json}\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env.local --"
+  },
+  "dependencies": {
+    "@types/pg": "^8.11.4",
+    "kysely": "^0.27.3",
+    "nanoid": "^5.0.6",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@theproject/eslint-config": "^0.2.0",
+    "@theproject/prettier-config": "^0.1.0",
+    "@theproject/tsconfig": "^0.1.0",
+    "dotenv-cli": "^7.4.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prisma": "^5.11.0",
+    "prisma-kysely": "^1.8.0",
+    "typescript": "^5.4.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@theproject/eslint-config/base"
+    ],
+    "rules": {
+      "@typescript-eslint/consistent-type-definitions": "off"
+    }
+  },
+  "prettier": "@theproject/prettier-config"
+}

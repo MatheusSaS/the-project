@@ -1,20 +1,33 @@
 {
-  "name": "theProject",
+  "name": "theproject",
   "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "prettier": "^3.2.5",
-    "turbo": "latest"
+  "engines": {
+    "node": ">=v18.17.1"
   },
   "packageManager": "pnpm@8.9.0",
-  "engines": {
-    "node": ">=18"
-  }
+  "scripts": {
+    "build": "turbo build",
+    "clean": "git clean -xdf node_modules dist .next",
+    "clean:workspaces": "turbo clean",
+    "db:generate": "turbo db:generate",
+    "db:push": "turbo db:push db:generate",
+    "db:studio": "pnpm -F db studio",
+    "dev": "cross-env FORCE_COLOR=1 turbo dev --parallel",
+    "dev:web": "turbo dev --parallel --filter --filter !@theproject/db",
+    "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
+    "format:fix": "turbo format --continue -- --write --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
+    "lint": "turbo lint --continue -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
+    "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg fix",
+    "typecheck": "turbo typecheck"
+  },
+  "dependencies": {
+    "@theproject/prettier-config": "workspace:^",
+    "@manypkg/cli": "^0.21.3",
+    "@turbo/gen": "^1.12.5",
+    "cross-env": "^7.0.3",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.5",
+    "typescript": "^5.4.2"
+  },
+  "prettier": "@theproject/prettier-config"
 }
