@@ -6,7 +6,7 @@ generator kysely {
 
 datasource db {
   provider     = "postgresql"
-  url          = env("DATABASE_URL")
+  url          = "postgresql://root:root@localhost/root"
   relationMode = "prisma"
 }
 
@@ -16,12 +16,25 @@ enum SubscriptionPlan {
   PRO
 }
 
+model Project {
+  id        String   @id @db.VarChar(30) // prefix_ + nanoid (16)
+  createdAt DateTime @default(now())
+
+  // A project is tied to a Clerk User 
+  userId         String? @db.VarChar(36) // uuid v4
+
+  name String
+  description String?
+  url  String?
+
+  @@index([userId])
+}
+
 model Customer {
   id                  String            @id @db.VarChar(30) // prefix_ + nanoid (16)
   stripeId            String            @unique
   subscriptionId      String?
   clerkUserId         String
-  clerkOrganizationId String?
   name                String?
   plan                SubscriptionPlan?
   paidUntil           DateTime?

@@ -119,7 +119,6 @@ export function EmailSignIn() {
           autoCapitalize="none"
           autoComplete="email"
           autoCorrect="off"
-          className="bg-background"
         />
       </div>
       <Button loading={isLoading} htmlType="submit">

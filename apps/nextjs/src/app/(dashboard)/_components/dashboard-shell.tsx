@@ -4,7 +4,7 @@ import { Breadcrumbs } from "./breadcrumbs";
 
 export function DashboardShell(props: {
   title: string;
-  description: React.ReactNode;
+  description?: React.ReactNode;
   breadcrumb?: boolean;
   headerAction?: React.ReactNode;
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export function DashboardShell(props: {
     <div>
       <div className="mb-4 grid grid-cols-1 items-center justify-between sm:grid-cols-2">
         <div className="w-full space-y-1">
-          <h1 className="font-cal text-xl font-semibold leading-none">
+          <h1 className="font-cal text-3xl font-semibold leading-none">
             {props.title}
           </h1>
           {typeof props.description === "string" ? (

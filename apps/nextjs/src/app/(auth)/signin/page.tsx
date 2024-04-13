@@ -1,21 +1,13 @@
-"use client";
-
-import Image from "next/image";
 import OauthSingIn from "./oauth-singin";
 import { EmailSignIn } from "./email-signin";
+import * as Icons from "@theproject/ui/icons";
 
 export default function AuthenticationPage() {
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center">
       <div className="w-full max-w-sm text-center sm:max-w-md px-5">
         <div className="flex justify-center">
-          <Image
-            src="/vercel.svg"
-            width={50}
-            height={50}
-            alt="Picture of the author"
-            className="mb-10"
-          />
+        <Icons.Logo className="mr-2 h-9 w-9" />
         </div>
         <h1 className="mb-5 text-2xl font-bold opacity-80">Entrar com</h1>
         <OauthSingIn />

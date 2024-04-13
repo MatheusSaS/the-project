@@ -2,8 +2,7 @@
   "extends": "@theproject/tsconfig/base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "resolveJsonModule": true
   },
-  "include": ["*.ts", "src"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules"],
 }

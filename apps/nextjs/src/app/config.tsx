@@ -1,5 +1,7 @@
 import type { Route } from "next";
 
+import * as Icons from "@theproject/ui/icons";
+
 export const siteConfig = {
   name: "The project",
   description:
@@ -11,12 +13,14 @@ export const siteConfig = {
 export const navItems = [
   {
     href: "/dashboard",
-    title: "home",
+    title: "Home",
+    icon: <Icons.Home className="w-[20px] h-[20px]"/>
   },{
-    href: "/dashboard/teste",
-    title: "teste",
-  },
-] satisfies { href: Route; title: string }[];
+    href: "/settings",
+    title: "Settings",
+    icon: <Icons.Settings />
+  }
+] satisfies { href: Route; title: string; icon: JSX.Element }[];
 
 export const BackgroundSVGs = {
   GradientTop: () => (

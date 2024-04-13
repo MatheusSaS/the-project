@@ -33,7 +33,7 @@ export default function Home() {
           style={{ animationDelay: "0.40s", animationFillMode: "forwards" }}
         >
           <a
-            className={cn(buttonVariants({ variant: "default" }))}
+            className={cn(buttonVariants({ type: "default" }))}
             href={siteConfig.github}
             target="_blank"
             rel="noopener noreferrer"

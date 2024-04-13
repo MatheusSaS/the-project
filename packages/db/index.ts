@@ -17,6 +17,7 @@ export const db = new Kysely<DB>({
       database: 'root',
       password: 'root',
       host: 'localhost',
+      user: 'root',
     })
   }),
 });

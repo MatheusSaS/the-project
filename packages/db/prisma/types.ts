@@ -13,12 +13,20 @@ export type Customer = {
   stripeId: string;
   subscriptionId: string | null;
   clerkUserId: string;
-  clerkOrganizationId: string | null;
   name: string | null;
   plan: SubscriptionPlan | null;
   paidUntil: Timestamp | null;
   endsAt: Timestamp | null;
 };
+export type Project = {
+  id: string;
+  createdAt: Generated<Timestamp>;
+  userId: string | null;
+  name: string;
+  description: string | null;
+  url: string | null;
+};
 export type DB = {
   Customer: Customer;
+  Project: Project;
 };

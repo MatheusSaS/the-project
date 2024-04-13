@@ -2,16 +2,15 @@ import * as React from "react";
 
 import { cn } from "./utils/cn";
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ className, ...props }, ref) => {
     return (
-      <input
-        type={type}
+      <textarea
         className={cn(
           `flex 
-          h-10 
+          h-20 
           w-full 
           rounded-md 
           border 
@@ -40,6 +39,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
   },
 );
-Input.displayName = "Input";
 
-export { Input };
+Textarea.displayName = "Textarea";
+
+export { Textarea };

@@ -6,7 +6,7 @@ import withMDX from "@next/mdx";
 const config = {
   reactStrictMode: true,
   /** Enables hot reloading for local packages without a build step */
-  transpilePackages: ["@theproject/ui"],
+  transpilePackages: ["@theproject/ui", "@theproject/db", "@theproject/api"],
   pageExtensions: ["ts", "tsx", "mdx"],
   experimental: {
     mdxRs: true,

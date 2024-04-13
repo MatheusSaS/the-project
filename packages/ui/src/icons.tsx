@@ -28,6 +28,7 @@ export const CopyDone = Lucide.ClipboardCheck;
 export const Sun = Lucide.SunMedium;
 export const Moon = Lucide.Moon;
 export const Key = Lucide.Key;
+export const Home = Lucide.Home;
 
 export const System: Icon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>

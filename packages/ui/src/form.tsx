@@ -22,6 +22,24 @@ const FormFieldContext = React.createContext<FormFieldContextValue>(
   {} as FormFieldContextValue,
 );
 
+const FormContent = (props: {
+  title: string;
+  description?: React.ReactNode;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 mt-5">
+      <div className="flex flex-col items-start">
+        <h1 className="text-lg font-semibold mb-2">{props.title}</h1>
+        <p className="text-opacity-85 hidden sm:flex">{props.description}</p>
+      </div>
+      <div className="col-span-2 rounded-md border bg-background p-4 shadow-md dark:bg-foreground/[.026]">
+        {props.children}
+      </div>
+    </div>
+  );
+};
+
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
@@ -108,6 +126,7 @@ const FormControl = React.forwardRef<
     <Slot
       ref={ref}
       id={formItemId}
+      className={error ? 'border-red-500' : ''}
       aria-describedby={
         !error
           ? `${formDescriptionId}`
@@ -170,4 +189,5 @@ export {
   FormDescription,
   FormMessage,
   FormField,
+  FormContent
 };
