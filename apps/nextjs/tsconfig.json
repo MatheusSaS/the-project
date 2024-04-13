@@ -11,7 +11,7 @@
       },
     ],
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "moduleResolution": "Node16",
+    "moduleResolution": "NodeNext",
     "module": "Node16",
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "*.ts", "*.mjs", "src"],

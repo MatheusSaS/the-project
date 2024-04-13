@@ -44,6 +44,7 @@ export const CreateProjectForm = (props: {
         });
       } else {
         router.push(`/dashboard`);
+        router.refresh();
       }
       toaster.toast({
         title: "Project created",

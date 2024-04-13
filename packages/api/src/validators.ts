@@ -16,3 +16,8 @@ export const renameProjectSchema = z.object({
   name: z.string().min(5, "Name must be at least 5 characters"),
 });
 export type RenameProject = z.infer<typeof renameProjectSchema>;
+
+export const projectExistsSchema = z.object({
+  projectId: z.string(),
+});
+export type projectExists = z.infer<typeof projectExistsSchema>;

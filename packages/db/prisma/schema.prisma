@@ -6,7 +6,7 @@ generator kysely {
 
 datasource db {
   provider     = "postgresql"
-  url          = "postgresql://root:root@localhost/root"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 

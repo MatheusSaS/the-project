@@ -11,7 +11,7 @@ export function ProjectCard(props: {
 }) {
   const { project } = props;
   return (
-    <Link href={`/${project.id}/overview`}>
+    <Link href={`/project/${project.id}/overview`}>
       <Card className="overflow-hidden">
         <div className="h-10 rounded-b-md" style={getRandomPatternStyle(project.id)} />
         <CardHeader className="min-h-32">

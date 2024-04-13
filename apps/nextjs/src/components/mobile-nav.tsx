@@ -5,7 +5,11 @@ import Link from "next/link";
 
 import { Button } from "@theproject/ui/button";
 import * as Icons from "@theproject/ui/icons";
-import { Popover, PopoverContent, PopoverTrigger } from "@theproject/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@theproject/ui/popover";
 import { ScrollArea } from "@theproject/ui/scroll-area";
 
 import { navItems, siteConfig } from "~/app/config";
